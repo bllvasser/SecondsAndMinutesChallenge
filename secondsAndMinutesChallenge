@@ -1,0 +1,32 @@
+package academy.learnprogrmming;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println(getDurationString(63l,45l));
+        System.out.println(getDurationString(5165l));
+
+    }
+    public static String getDurationString(long minutes, long seconds) {
+        if((minutes < 0) || (seconds < 0) || (seconds > 59)) {
+            return "Invalid value";
+        }
+        long hours = minutes / 60;
+        long remainingMinutes = minutes % 60;
+        return "number of " + hours + " hours " + remainingMinutes + " minutes " + seconds + " seconds ";
+    }
+    public static String getDurationString( long seconds) {
+        if(seconds < 0) {
+            return "Invalid value";
+        }
+        long minutes = seconds / 60;
+        long remainingSeconds = seconds % 60;
+        return getDurationString(minutes, remainingSeconds);
+    }
+
+}
+"C:\Program Files\Java\jdk-15.0.1\bin\java.exe" "-javaagent:C:\Users\nadiy\OneDrive\Desktop\IntelliJ IDEA Community Edition 2020.2.3\lib\idea_rt.jar=51124:C:\Users\nadiy\OneDrive\Desktop\IntelliJ IDEA Community Edition 2020.2.3\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\nadiy\IdeaProjects\SecondAndMinuteChallenge\out\production\SecondAndMinuteChallenge academy.learnprogrmming.Main
+number of 1 hours 3 minutes 45 seconds 
+number of 1 hours 26 minutes 5 seconds 
+
+Process finished with exit code 0
